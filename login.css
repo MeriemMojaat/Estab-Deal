@@ -1,0 +1,55 @@
+/* table,
+th,
+td {
+    border: 1px solid black;
+}
+
+table.center {
+    margin-left: auto;
+    margin-right: auto;
+} */
+
+table,
+th,
+td {
+    /* border: 8px solid black; */
+    border: 0.01px solid black;
+}
+
+table,
+th,
+td,
+input {
+    background-color: ;
+}
+
+table.center {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.body {
+    /* background-image: url(fonnt.jpg); */
+    background-size: cover;
+    background-position: center;
+    font-family: sans-serif;
+}
+
+.form-box {
+    width: 500px;
+    background: #026670ff;
+    margin: 12% auto;
+    padding: 10px 0;
+    color: #fce181ff;
+    box-shadow: rgba(2, 51, 185, 0.753);
+}
+
+body {
+    /* background: rgba(128, 29, 29, 0.644); */
+    background-color: #fef9c7ff;
+}

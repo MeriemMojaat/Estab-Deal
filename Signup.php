@@ -1,0 +1,198 @@
+<?php 
+
+include "../Model/User.php";
+include "../Controller/UserC.php";
+
+
+if(isset($_POST['inscri']))
+{
+if( isset($_POST['name']) and isset($_POST['lastname']) and isset($_POST['email']) and isset($_POST['pwd']) and isset($_POST['phonenum']) and isset($_POST['adress'])){
+$user=new User($_POST['name'],$_POST['lastname'],$_POST['adress'],$_POST['phonenum'],$_POST['email'],$_POST['pwd']);
+
+    $filename = $_FILES["image"]["name"];
+        $tempname = $_FILES["image"]["tmp_name"];
+
+    $folder = "./images/client/".$filename ;
+    move_uploaded_file($tempname, $folder);
+
+//Partie3
+$userC = new UserC();
+$userC->addUser($user);
+$userC->AddUserimg($_POST['email'],$folder);
+
+echo "<script type='text/javascript'>";
+echo "alert('Vous êtes inscrit ! Connectez-vous !');
+window.location.href='Login.php';";
+echo "</script>";
+    
+}else{
+    echo "vérifieer les champs";
+    die();
+}
+//*/
+}
+?>
+
+<html lang="en"><head>
+    <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Home page</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=https://fonts.googleapis.com/css?family=Inconsolata:400,500,600,700|Raleway:400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: MyPortfolio - v4.9.1
+  * Template URL: https://bootstrapmade.com/myportfolio-bootstrap-portfolio-website-template/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/checkout/">
+
+    
+
+    
+
+<link href="/docs/5.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+
+    <!-- Favicons -->
+<link rel="apple-touch-icon" href="/docs/5.2/assets/img/favicons/apple-touch-icon.png" sizes="180x180">
+<link rel="icon" href="/docs/5.2/assets/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="/docs/5.2/assets/img/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
+<link rel="manifest" href="/docs/5.2/assets/img/favicons/manifest.json">
+<link rel="mask-icon" href="/docs/5.2/assets/img/favicons/safari-pinned-tab.svg" color="#712cf9">
+<link rel="icon" href="/docs/5.2/assets/img/favicons/favicon.ico">
+<!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+
+
+<meta name="theme-color" content="#712cf9">
+
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+
+      .b-example-divider {
+        height: 3rem;
+        background-color: rgba(0, 0, 0, .1);
+        border: solid rgba(0, 0, 0, .15);
+        border-width: 1px 0;
+        box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+      }
+
+      .b-example-vr {
+        flex-shrink: 0;
+        width: 1.5rem;
+        height: 100vh;
+      }
+
+      .bi {
+        vertical-align: -.125em;
+        fill: currentColor;
+      }
+
+      .nav-scroller {
+        position: relative;
+        z-index: 2;
+        height: 2.75rem;
+        overflow-y: hidden;
+      }
+
+      .nav-scroller .nav {
+        display: flex;
+        flex-wrap: nowrap;
+        padding-bottom: 1rem;
+        margin-top: -1px;
+        overflow-x: auto;
+        text-align: center;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+      }
+    </style>
+
+    
+    <!-- Custom styles for this template -->
+    <link href="form-validation.css" rel="stylesheet">
+  </head>
+
+
+  <?php include 'navBar.php'; ?>
+  <!-- ======= Navbar ======= -->
+  <body class="bg-light">
+    
+<div class="container">
+  <main>
+    <div class="py-5 text-center">
+      <img class="d-block mx-auto mb-4" src="assets\img\logo.png" alt="" width="72" height="57">
+      <h2>Sign in form</h2>      
+          <form action="#" class="form-group"  method="post" enctype="multipart/form-data" id="form_client">
+                            <div >
+                                <input type="text" name="name" placeholder="name" id="name">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" name="lastname" placeholder="lastname" id="lastname">
+                                </div>
+                            <div class="form-group">
+                                <input type="text" name="email" placeholder="Email" id="email">
+                                </div>
+                            <div class="form-group">
+                                <input type="password" name="pwd" placeholder="Password" id="pwd">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" name="phonenum" placeholder="phonenumephone" id="phonenum">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" name="adress" placeholder="adress" id="adress">
+                                </div>
+                            <div class="form-group">
+                                <p>Select image to upload:</p>
+                                <input class="form-control" input type="file" name="image" >
+                            </div>
+                            <br>
+                            <div class="form-group">
+                                <input class="form-group" type="submit" value="S'inscrire" name="inscri" id="inscri">
+
+                            </div>
+                        </form>
+  </main>
+
+
+</div>
+
+        <!-- JavaScript Bundle with Popper -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+
+
+      <script src="form-validation.js"></script>
+  
+
+</body></html>
