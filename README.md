@@ -16,22 +16,16 @@ Estab'Deal is more than just a clothes-swapping site, it’s a step toward susta
 🛒 Points can be used to acquire items even without a direct trade.
 
 # 🧠 Features
-🧑‍💼 Client-side Features
+🧑‍💼 Client-side Features: 
 🛂 ESPRIT-student login system
-
 📤 Product upload & management
-
 ⭐ Review & feedback system
-
 🛍️ Order & request products
-
 ✅ Confirm orders
 
-🏢 Admin/Company-side Features
+🏢 Admin/Company-side Features:
 ✅ Ensure product quality
-
 📦 Manage orders & deliveries
-
 🔁 Handle returns and ensure satisfaction
 
 # 🛠️ Tech Stack
