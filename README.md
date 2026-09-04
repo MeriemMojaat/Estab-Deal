@@ -17,6 +17,7 @@ Estab'Deal is more than just a clothes-swapping site, it’s a step toward susta
 
 # 🧠 Features
 🧑‍💼 Client-side Features: 
+
 🛂 ESPRIT-student login system
 📤 Product upload & management
 ⭐ Review & feedback system
@@ -24,6 +25,7 @@ Estab'Deal is more than just a clothes-swapping site, it’s a step toward susta
 ✅ Confirm orders
 
 🏢 Admin/Company-side Features:
+
 ✅ Ensure product quality
 📦 Manage orders & deliveries
 🔁 Handle returns and ensure satisfaction
