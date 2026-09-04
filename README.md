@@ -2,7 +2,7 @@
 A web-based platform developed for ESPRIT students to exchange unused clothing and items, encouraging sustainable habits and reducing waste through a point-based barter system.
 
 # 🌍 Project Vision
-Estab'Deal is more than just a clothes-swapping site — it’s a step toward sustainability. The platform enables students to recycle and repurpose unused clothing and items instead of discarding them. It promotes conscious consumption and supports SDG 12: Responsible Consumption and Production.
+Estab'Deal is more than just a clothes-swapping site, it’s a step toward sustainability. The platform enables students to recycle and repurpose unused clothing and items instead of discarding them. It promotes conscious consumption and supports SDG 12: Responsible Consumption and Production.
 
 # 🧩 How It Works
 👕 Students upload photos and descriptions of unused items.
@@ -40,8 +40,6 @@ Frontend: HTML, CSS, JavaScript
 Backend: PHP
 
 Database: MySQL
-
-Framework (optional): Could include Symfony, Laravel, etc.
 
 # 🧭 Target Users
 Students at ESPRIT looking to swap or donate their unused clothing or items
